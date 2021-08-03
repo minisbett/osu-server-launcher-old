@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OsuServerLauncher", "OsuServerLauncher\OsuServerLauncher.csproj", "{F6FAE9FE-800A-41EA-B343-CAAC796835AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6FAE9FE-800A-41EA-B343-CAAC796835AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6FAE9FE-800A-41EA-B343-CAAC796835AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6FAE9FE-800A-41EA-B343-CAAC796835AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6FAE9FE-800A-41EA-B343-CAAC796835AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C8CC98F-3F67-4D02-A4DD-00892727F4C5}
+	EndGlobalSection
+EndGlobal
