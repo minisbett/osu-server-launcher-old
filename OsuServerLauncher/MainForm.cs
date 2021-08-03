@@ -194,7 +194,7 @@ namespace OsuServerLauncher
       m_selectedServerItem?.DeselectItem();
       sender.SelectItem();
       m_selectedServerItem = sender;
-      btnRemoveServer.Enabled = m_servers.Contains(sender.Server);
+      btnRemoveServer.Enabled = sender.Server.Domain != "ppy.sh";
       btnAddRemoveCredentials.Enabled = true;
       btnAddRemoveCredentials.Text = sender.Server.Credentials == null ? "Add Credentials" : "Remove Credentials";
     }
