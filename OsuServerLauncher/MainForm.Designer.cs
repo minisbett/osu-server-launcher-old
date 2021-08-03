@@ -39,9 +39,9 @@ namespace OsuServerLauncher
       this.btnLauncher = new System.Windows.Forms.Button();
       this.btnAbout = new System.Windows.Forms.Button();
       this.pnlAbout = new System.Windows.Forms.Panel();
-      this.label6 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
       this.lblVersion = new System.Windows.Forms.Label();
+      this.label6 = new System.Windows.Forms.Label();
       this.label7 = new System.Windows.Forms.Label();
       this.pictureBox1 = new System.Windows.Forms.PictureBox();
       this.label5 = new System.Windows.Forms.Label();
@@ -161,8 +161,8 @@ namespace OsuServerLauncher
       this.btnLauncher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
       this.btnLauncher.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
       this.btnLauncher.FlatAppearance.BorderSize = 0;
-      this.btnLauncher.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-      this.btnLauncher.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+      this.btnLauncher.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+      this.btnLauncher.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
       this.btnLauncher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnLauncher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
       this.btnLauncher.ForeColor = System.Drawing.Color.White;
@@ -196,9 +196,9 @@ namespace OsuServerLauncher
       // 
       // pnlAbout
       // 
-      this.pnlAbout.Controls.Add(this.label6);
       this.pnlAbout.Controls.Add(this.label2);
       this.pnlAbout.Controls.Add(this.lblVersion);
+      this.pnlAbout.Controls.Add(this.label6);
       this.pnlAbout.Controls.Add(this.label7);
       this.pnlAbout.Controls.Add(this.pictureBox1);
       this.pnlAbout.Controls.Add(this.label5);
@@ -212,19 +212,6 @@ namespace OsuServerLauncher
       this.pnlAbout.Size = new System.Drawing.Size(493, 296);
       this.pnlAbout.TabIndex = 2;
       this.pnlAbout.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDraggable);
-      // 
-      // label6
-      // 
-      this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-      this.label6.ForeColor = System.Drawing.Color.White;
-      this.label6.Location = new System.Drawing.Point(4, 64);
-      this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-      this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(486, 119);
-      this.label6.TabIndex = 6;
-      this.label6.Text = resources.GetString("label6.Text");
-      this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      this.label6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDraggable);
       // 
       // label2
       // 
@@ -243,14 +230,27 @@ namespace OsuServerLauncher
       // 
       this.lblVersion.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
       this.lblVersion.ForeColor = System.Drawing.Color.White;
-      this.lblVersion.Location = new System.Drawing.Point(0, 42);
+      this.lblVersion.Location = new System.Drawing.Point(0, 47);
       this.lblVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.lblVersion.Name = "lblVersion";
       this.lblVersion.Size = new System.Drawing.Size(492, 31);
       this.lblVersion.TabIndex = 8;
       this.lblVersion.Text = "Version 1.0";
-      this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.lblVersion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
       this.lblVersion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDraggable);
+      // 
+      // label6
+      // 
+      this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+      this.label6.ForeColor = System.Drawing.Color.White;
+      this.label6.Location = new System.Drawing.Point(4, 67);
+      this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.label6.Name = "label6";
+      this.label6.Size = new System.Drawing.Size(486, 119);
+      this.label6.TabIndex = 6;
+      this.label6.Text = resources.GetString("label6.Text");
+      this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.label6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDraggable);
       // 
       // label7
       // 
