@@ -165,9 +165,9 @@ namespace OsuServerLauncher.Controls
       // 
       // pictureBox
       // 
-      this.pictureBox.Location = new System.Drawing.Point(137, 14);
+      this.pictureBox.Location = new System.Drawing.Point(135, 8);
       this.pictureBox.Name = "pictureBox";
-      this.pictureBox.Size = new System.Drawing.Size(32, 32);
+      this.pictureBox.Size = new System.Drawing.Size(40, 40);
       this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.pictureBox.TabIndex = 15;
       this.pictureBox.TabStop = false;
