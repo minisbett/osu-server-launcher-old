@@ -16,23 +16,20 @@ namespace OsuServerLauncher.Helpers
     {
       WebClient client = new WebClient();
 
-      try
+      string[] urls = new string[]
       {
-        return Image.FromStream(new MemoryStream(client.DownloadData($"https://osu.{domain}/favicon.ico")));
-      }
-      catch { }
+        $"https://osu.{domain}/favicon.ico",
+        $"https://osu.{domain}/static/favicon.ico",
+        $"https://{domain}/favicon.ico",
+        $"https://{domain}/static/favicon.ico"
+      };
 
-      try
-      {
-        return Image.FromStream(new MemoryStream(client.DownloadData($"https://{domain}/favicon.ico")));
-      }
-      catch { }
-
-      try
-      {
-        return Image.FromStream(new MemoryStream(client.DownloadData($"https://{domain}/static/favicon.ico")));
-      }
-      catch { }
+      foreach (string url in urls)
+        try
+        {
+          return Image.FromStream(new MemoryStream(client.DownloadData(url)));
+        }
+        catch { }
 
       return null;
     }
