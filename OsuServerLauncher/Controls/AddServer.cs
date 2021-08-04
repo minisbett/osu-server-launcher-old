@@ -57,7 +57,7 @@ namespace OsuServerLauncher.Controls
 
     private void btnAddServer_Click(object sender, EventArgs e)
     {
-      string domain = TrimStart(TrimStart(txtDomain.Text, "https://"), "www.").TrimEnd('/');
+      string domain = TrimStart(TrimStart(TrimStart(txtDomain.Text, "https://"), "www."), "osu.").TrimEnd('/');
       Server = new Server(txtName.Text, domain);
       Close();
     }
@@ -81,7 +81,7 @@ namespace OsuServerLauncher.Controls
       m_logodelay.Stop();
       new Thread(_ =>
       {
-        string domain = TrimStart(TrimStart(txtDomain.Text, "https://"), "www.").TrimEnd('/');
+        string domain = TrimStart(TrimStart(TrimStart(txtDomain.Text, "https://"), "www."), "osu.").TrimEnd('/');
         Image img = Utils.GetServerIcon(domain);
         if (img != null)
           m_context.Post(_ => pictureBox.Image = img, null);
@@ -91,7 +91,7 @@ namespace OsuServerLauncher.Controls
     private string TrimStart(string str, string trim)
     {
       while (str.StartsWith(trim))
-        str = str.Substring(trim.Length - 1);
+        str = str.Substring(trim.Length);
 
       return str;
     }
