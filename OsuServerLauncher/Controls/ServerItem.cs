@@ -62,7 +62,7 @@ namespace OsuServerLauncher.Controls
 
     private async void FetchIcon(SynchronizationContext context)
     {
-      await Task.Run(async () =>
+      await Task.Run(() =>
       { 
         Image img = Utils.GetServerIcon(Server.Domain);
         if (img != null)

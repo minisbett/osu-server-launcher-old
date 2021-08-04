@@ -194,7 +194,7 @@ namespace OsuServerLauncher
       m_selectedServerItem?.DeselectItem();
       sender.SelectItem();
       m_selectedServerItem = sender;
-      btnRemoveServer.Enabled = sender.Server.Domain != "ppy.sh";
+      btnRemoveServer.Enabled = !sender.Server.IsOfficial;
       btnAddRemoveCredentials.Enabled = true;
       btnAddRemoveCredentials.Text = sender.Server.Credentials == null ? "Add Credentials" : "Remove Credentials";
     }
@@ -209,13 +209,13 @@ namespace OsuServerLauncher
         string endpointline = configfile.Replace("\r", "").Split('\n').FirstOrDefault(x => x.Split("=".ToCharArray(), 2)[0].TrimEnd() == "CredentialEndpoint");
         string usernameline = configfile.Replace("\r", "").Split('\n').FirstOrDefault(x => x.Split("=".ToCharArray(), 2)[0].TrimEnd() == "Username");
         string passwordline = configfile.Replace("\r", "").Split('\n').FirstOrDefault(x => x.Split("=".ToCharArray(), 2)[0].TrimEnd() == "Password");
-        configfile = configfile.Replace(endpointline, $"CredentialEndpoint = {(server.Domain == "ppy.sh" ? "" : server.Domain)}");
+        configfile = configfile.Replace(endpointline, $"CredentialEndpoint = {(server.IsOfficial ? "" : server.Domain)}");
         configfile = configfile.Replace(usernameline, $"Username = {server.Credentials.Username}");
         configfile = configfile.Replace(passwordline, $"Password = {server.Credentials.Password}");
         File.WriteAllText(Path.Combine(m_osuPath, $"osu!.{Environment.UserName}.cfg"), configfile);
       }
 
-      Process.Start(Path.Combine(m_osuPath, "osu!.exe"), server.Domain == "ppy.sh" ? "" : $"-devserver {server.Domain}");
+      Process.Start(Path.Combine(m_osuPath, "osu!.exe"), server.IsOfficial ? "" : $"-devserver {server.Domain}");
 
       File.WriteAllText(m_streamoverlayserverfile, server.Name);
       if (sender.Icon != null)

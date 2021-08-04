@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using OsuServerLauncher.Models;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -16,6 +17,13 @@ namespace OsuServerLauncher.Helpers
     {
       WebClient client = new WebClient();
 
+      if(domain == "ppy.sh")
+        try
+        {
+          return Image.FromStream(new MemoryStream(client.DownloadData("https://raw.githubusercontent.com/MinisBett/osu-server-launcher/master/osu_1024.png"))); 
+        }
+        catch { }
+
       string[] urls = new string[]
       {
         $"https://osu.{domain}/favicon.ico",
@@ -27,7 +35,19 @@ namespace OsuServerLauncher.Helpers
       foreach (string url in urls)
         try
         {
-          return Image.FromStream(new MemoryStream(client.DownloadData(url)));
+          Image img = Image.FromStream(new MemoryStream(client.DownloadData(url)));
+          if (img.Width != img.Height)
+            continue;
+          if (img.Width < 64)
+          {
+            Image img2 = new Bitmap(64, 64);
+            using (Graphics g = Graphics.FromImage(img2))
+              g.DrawImage(img, 64 / 2 - img.Width / 2, 64 / 2 - img.Height / 2);
+            img.Dispose();
+            return img2;
+          }
+
+          return img;
         }
         catch { }
 

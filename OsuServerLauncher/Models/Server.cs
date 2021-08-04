@@ -18,6 +18,12 @@ namespace OsuServerLauncher.Models
     [JsonProperty("credentials")]
     public Credentials Credentials { get; set; }
 
+    [JsonIgnore]
+    public bool IsOfficial => Domain == OfficialServerDomain;
+
+    [JsonIgnore]
+    public string OfficialServerDomain => "ppy.sh";
+
     public Server(string name, string domain)
     {
       Name = name;
