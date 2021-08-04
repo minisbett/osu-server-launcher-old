@@ -151,14 +151,19 @@ namespace OsuServerLauncher
         File.WriteAllText(m_datafile, JsonConvert.SerializeObject(m_data, Formatting.Indented));
       }
 
-      UpdateServerList();
-
       File.WriteAllText(m_streamoverlayserverfile, "");
       File.WriteAllText(m_streamoverlayiconfile, "");
 
-      string newestversion = await GetNewestVersion();
-      if (newestversion != VERSION)
-        MessageBox.Show($"A new version is available!\n\nYour Version: {VERSION}\nNewest Version: {newestversion}\n\nPlease download the newest version from GitHub to prevent bugs and grant the best user experience.\nYou can find the GitHub Repository on the \"About\" page of the launcher.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+      UpdateServerList();
+
+#pragma warning disable CS4014
+      Task.Run(async () =>
+      {
+        string newestversion = await GetNewestVersion();
+        if (newestversion != VERSION)
+          MessageBox.Show($"A new version is available!\n\nYour Version: {VERSION}\nNewest Version: {newestversion}\n\nPlease download the newest version from GitHub to prevent bugs and grant the best user experience.\nYou can find the GitHub Repository on the \"About\" page of the launcher.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+      });
+#pragma warning restore CS4014
     }
 
     private async Task<string> GetNewestVersion()

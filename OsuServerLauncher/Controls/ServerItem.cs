@@ -34,10 +34,21 @@ namespace OsuServerLauncher.Controls
 
       Server = server;
       lblName.Text = server.Name;
+      SynchronizationContext context = SynchronizationContext.Current;
       if (IconCache.ContainsKey(server.Domain))
         pictureIcon.Image = IconCache[server.Domain];
       else
-        FetchIcon(SynchronizationContext.Current);
+      {
+        Task.Run(() =>
+        {
+          Image img = Utils.GetServerIcon(Server.Domain);
+          if (img != null)
+          {
+            context.Post(_ => pictureIcon.Image = img, null);
+            IconCache.Add(Server.Domain, img);
+          }
+        });
+      }
 
       base.Click += (sender, e) => Click?.Invoke(this);
       base.DoubleClick += (sender, e) => DoubleClick?.Invoke(this);
@@ -58,19 +69,6 @@ namespace OsuServerLauncher.Controls
     public void DeselectItem()
     {
       BackColor = Color.FromArgb(10, 10, 10);
-    }
-
-    private async void FetchIcon(SynchronizationContext context)
-    {
-      await Task.Run(() =>
-      { 
-        Image img = Utils.GetServerIcon(Server.Domain);
-        if (img != null)
-        {
-          context.Post(_ => pictureIcon.Image = img, null);
-          IconCache.Add(Server.Domain, img);
-        }
-      });
     }
   }
 }
