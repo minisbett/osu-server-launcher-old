@@ -40,7 +40,7 @@ namespace OsuServerLauncher
     string m_streamoverlayserverfile = Path.Combine(Environment.GetEnvironmentVariable("localappdata"), "osu! Server Launcher", "streamoverlay", "server.txt");
     string m_streamoverlayiconfile = Path.Combine(Environment.GetEnvironmentVariable("localappdata"), "osu! Server Launcher", "streamoverlay", "icon.png");
 
-    public const string VERSION = "v1.0-pre-release-3";
+    public const string VERSION = "v1.0-pre-release-4";
 
     public MainForm()
     {
