@@ -214,9 +214,9 @@ namespace OsuServerLauncher
         string endpointline = configfile.Replace("\r", "").Split('\n').FirstOrDefault(x => x.Split("=".ToCharArray(), 2)[0].TrimEnd() == "CredentialEndpoint");
         string usernameline = configfile.Replace("\r", "").Split('\n').FirstOrDefault(x => x.Split("=".ToCharArray(), 2)[0].TrimEnd() == "Username");
         string passwordline = configfile.Replace("\r", "").Split('\n').FirstOrDefault(x => x.Split("=".ToCharArray(), 2)[0].TrimEnd() == "Password");
-        configfile = configfile.Replace(endpointline, $"CredentialEndpoint = {(server.IsOfficial ? "" : server.Domain)}");
-        configfile = configfile.Replace(usernameline, $"Username = {server.Credentials.Username}");
-        configfile = configfile.Replace(passwordline, $"Password = {server.Credentials.Password}");
+        configfile = configfile.Replace($"\n{endpointline}", $"\nCredentialEndpoint = {(server.IsOfficial ? "" : server.Domain)}");
+        configfile = configfile.Replace($"\n{usernameline}", $"\nUsername = {server.Credentials.Username}");
+        configfile = configfile.Replace($"\n{passwordline}", $"\nPassword = {server.Credentials.Password}");
         File.WriteAllText(Path.Combine(m_osuPath, $"osu!.{Environment.UserName}.cfg"), configfile);
       }
 
@@ -255,29 +255,22 @@ namespace OsuServerLauncher
       btnAddRemoveCredentials.Enabled = false;
       m_selectedServerItem = null;
       UpdateServerList();
-
     }
 
     private void btnAddRemoveCredentials_Click(object sender, EventArgs e)
     {
       if (btnAddRemoveCredentials.Text == "Add Credentials")
       {
-        string configfile = File.ReadAllText(Path.Combine(m_osuPath, $"osu!.{Environment.UserName}.cfg"));
-        string username = configfile.Replace("\r", "").Split('\n').FirstOrDefault(x => x.Split('=')[0].TrimEnd() == "Username").Split("=".ToCharArray(), 2)[1].TrimStart(' ');
-        string password = configfile.Replace("\r", "").Split('\n').FirstOrDefault(x => x.Split('=')[0].TrimEnd() == "Password").Split("=".ToCharArray(), 2)[1].TrimStart(' ');
-
-        if (username == "" || password == "")
-        {
-          MessageBox.Show("Could not add the credentials.\n\nTo add the credentials properly, please follow the following steps:\n\n1. Connect to the according server.\n2. Type in your credentials.\n3. Check the 'Save Username' and 'Save Password' options.\n4. Log in\n5. Close osu!\n\nAfter following these steps, try to add your credentials again.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        AddCredentials ac = new AddCredentials();
+        ac.ShowDialog();
+        if (ac.Credentials == null)
           return;
-        }
 
-        m_servers.First(x => x.Domain == m_selectedServerItem.Server.Domain).Credentials = new Credentials(username, password);
+        m_servers.First(x => x.Domain == m_selectedServerItem.Server.Domain).Credentials = ac.Credentials;
         m_selectedServerItem.ShowLock = true;
         File.WriteAllText(m_serverfile, JsonConvert.SerializeObject(m_servers, Formatting.Indented));
 
         btnAddRemoveCredentials.Text = "Remove Credentials";
-        MessageBox.Show($"Credentials added.\n\nUsername: '{username}'", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
       }
       else
       {
@@ -286,7 +279,6 @@ namespace OsuServerLauncher
         File.WriteAllText(m_serverfile, JsonConvert.SerializeObject(m_servers, Formatting.Indented));
 
         btnAddRemoveCredentials.Text = "Add Credentials";
-        MessageBox.Show($"Credentials removed.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
       }
     }
 
