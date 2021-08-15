@@ -27,7 +27,8 @@ namespace OsuServerLauncher.Helpers
       string[] urls = new string[]
       {
         $"https://osu.{domain}/favicon.ico",
-        $"https://osu.{domain}/static/favicon.ico",
+        $"https://osu.{domain}/static/favicon.ico",",
+        $"https://osu.{domain}/static/favicon/favicon.ico"
         $"https://{domain}/favicon.ico",
         $"https://{domain}/static/favicon.ico",
         $"https://{domain}/static/favicon/favicon.ico"
