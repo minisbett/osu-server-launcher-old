@@ -29,7 +29,8 @@ namespace OsuServerLauncher.Helpers
         $"https://osu.{domain}/favicon.ico",
         $"https://osu.{domain}/static/favicon.ico",
         $"https://{domain}/favicon.ico",
-        $"https://{domain}/static/favicon.ico"
+        $"https://{domain}/static/favicon.ico",
+        $"https://{domain}/static/favicon/favicon.ico"
       };
 
       foreach (string url in urls)
