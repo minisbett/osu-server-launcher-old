@@ -40,7 +40,7 @@ namespace OsuServerLauncher
     string m_streamoverlayserverfile = Path.Combine(Environment.GetEnvironmentVariable("localappdata"), "osu! Server Launcher", "streamoverlay", "server.txt");
     string m_streamoverlayiconfile = Path.Combine(Environment.GetEnvironmentVariable("localappdata"), "osu! Server Launcher", "streamoverlay", "icon.png");
 
-    public const string VERSION = "v1.0-pre-release-4";
+    public const string VERSION = "v1.0";
 
     public MainForm()
     {
@@ -116,6 +116,7 @@ namespace OsuServerLauncher
       Directory.CreateDirectory(Path.Combine(m_appdatafolder, "streamoverlay"));
 
       File.WriteAllText(Path.Combine(m_appdatafolder, "DO NOT SHARE THE 'servers.json' FILE."), "The servers.json file may contain credentials from accounts on servers you play.\nDo not share this file with anyone.");
+      
       if (!File.Exists(m_serverfile))
         File.WriteAllText(m_serverfile, JsonConvert.SerializeObject(m_servers, Formatting.Indented));
       m_servers = JsonConvert.DeserializeObject<Server[]>(File.ReadAllText(m_serverfile)).ToList();
@@ -199,7 +200,7 @@ namespace OsuServerLauncher
       m_selectedServerItem?.DeselectItem();
       sender.SelectItem();
       m_selectedServerItem = sender;
-      btnRemoveServer.Enabled = !sender.Server.IsOfficial;
+      btnRemoveServer.Enabled = true;
       btnAddRemoveCredentials.Enabled = true;
       btnAddRemoveCredentials.Text = sender.Server.Credentials == null ? "Add Credentials" : "Remove Credentials";
     }
