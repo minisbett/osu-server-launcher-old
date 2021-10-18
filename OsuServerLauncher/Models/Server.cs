@@ -21,8 +21,7 @@ namespace OsuServerLauncher.Models
     [JsonIgnore]
     public bool IsOfficial => Domain == DefaultServer.Domain;
 
-    [JsonIgnore]
-    public Server Official => new Server("Official", "osu.ppy.sh");
+    public static Server Official => new Server("Official", "osu.ppy.sh");
 
     public Server(string name, string domain)
     {
