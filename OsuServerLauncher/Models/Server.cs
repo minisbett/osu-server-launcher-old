@@ -19,7 +19,7 @@ namespace OsuServerLauncher.Models
     public Credentials Credentials { get; set; }
 
     [JsonIgnore]
-    public bool IsOfficial => Domain == DefaultServer.Domain;
+    public bool IsOfficial => Domain == Official.Domain;
 
     public static Server Official => new Server("Official", "osu.ppy.sh");
 
