@@ -27,7 +27,7 @@ namespace OsuServerLauncher
     [System.Runtime.InteropServices.DllImport("user32.dll")]
     public static extern bool ReleaseCapture();
 
-    List<Server> m_servers = new List<Server>() { new Server("Official", "ppy.sh") };
+    List<Server> m_servers = new List<Server>() { Server.Official };
     Data m_data = new Data();
     ServerItem m_selectedServerItem = null;
     HttpListener m_httpListener = new HttpListener();
