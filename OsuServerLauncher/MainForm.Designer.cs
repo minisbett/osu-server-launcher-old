@@ -33,26 +33,24 @@ namespace OsuServerLauncher
       this.btnExit = new System.Windows.Forms.Button();
       this.pnlLauncher = new System.Windows.Forms.Panel();
       this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+      this.panel1 = new System.Windows.Forms.Panel();
+      this.btnSettings = new System.Windows.Forms.Button();
       this.btnAddRemoveCredentials = new System.Windows.Forms.Button();
-      this.btnRemoveServer = new System.Windows.Forms.Button();
       this.btnAddServer = new System.Windows.Forms.Button();
-      this.btnLauncher = new System.Windows.Forms.Button();
-      this.btnAbout = new System.Windows.Forms.Button();
+      this.btnRemoveServer = new System.Windows.Forms.Button();
       this.pnlAbout = new System.Windows.Forms.Panel();
       this.label2 = new System.Windows.Forms.Label();
       this.lblVersion = new System.Windows.Forms.Label();
-      this.label6 = new System.Windows.Forms.Label();
       this.label7 = new System.Windows.Forms.Label();
-      this.pictureBox1 = new System.Windows.Forms.PictureBox();
-      this.label5 = new System.Windows.Forms.Label();
       this.label4 = new System.Windows.Forms.Label();
       this.pctrDiscord = new System.Windows.Forms.PictureBox();
       this.label3 = new System.Windows.Forms.Label();
       this.pctrGithub = new System.Windows.Forms.PictureBox();
       this.label1 = new System.Windows.Forms.Label();
+      this.btnAbout = new System.Windows.Forms.Button();
       this.pnlLauncher.SuspendLayout();
+      this.panel1.SuspendLayout();
       this.pnlAbout.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pctrDiscord)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pctrGithub)).BeginInit();
       this.SuspendLayout();
@@ -78,25 +76,57 @@ namespace OsuServerLauncher
       // pnlLauncher
       // 
       this.pnlLauncher.Controls.Add(this.flowLayoutPanel);
-      this.pnlLauncher.Controls.Add(this.btnAddRemoveCredentials);
-      this.pnlLauncher.Controls.Add(this.btnRemoveServer);
-      this.pnlLauncher.Controls.Add(this.btnAddServer);
+      this.pnlLauncher.Controls.Add(this.panel1);
       this.pnlLauncher.Location = new System.Drawing.Point(12, 53);
       this.pnlLauncher.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
       this.pnlLauncher.Name = "pnlLauncher";
-      this.pnlLauncher.Size = new System.Drawing.Size(517, 296);
+      this.pnlLauncher.Size = new System.Drawing.Size(517, 253);
       this.pnlLauncher.TabIndex = 1;
       this.pnlLauncher.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDraggable);
       // 
       // flowLayoutPanel
       // 
       this.flowLayoutPanel.AutoScroll = true;
-      this.flowLayoutPanel.Location = new System.Drawing.Point(4, 3);
+      this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.flowLayoutPanel.Location = new System.Drawing.Point(40, 0);
       this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
       this.flowLayoutPanel.Name = "flowLayoutPanel";
-      this.flowLayoutPanel.Size = new System.Drawing.Size(510, 252);
+      this.flowLayoutPanel.Size = new System.Drawing.Size(477, 253);
       this.flowLayoutPanel.TabIndex = 9;
       this.flowLayoutPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDraggable);
+      // 
+      // panel1
+      // 
+      this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+      this.panel1.Controls.Add(this.btnAbout);
+      this.panel1.Controls.Add(this.btnSettings);
+      this.panel1.Controls.Add(this.btnAddRemoveCredentials);
+      this.panel1.Controls.Add(this.btnAddServer);
+      this.panel1.Controls.Add(this.btnRemoveServer);
+      this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+      this.panel1.Location = new System.Drawing.Point(0, 0);
+      this.panel1.Name = "panel1";
+      this.panel1.Size = new System.Drawing.Size(40, 253);
+      this.panel1.TabIndex = 10;
+      // 
+      // btnSettings
+      // 
+      this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+      this.btnSettings.Enabled = false;
+      this.btnSettings.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+      this.btnSettings.FlatAppearance.BorderSize = 2;
+      this.btnSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+      this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+      this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+      this.btnSettings.ForeColor = System.Drawing.Color.White;
+      this.btnSettings.Location = new System.Drawing.Point(4, 218);
+      this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+      this.btnSettings.Name = "btnSettings";
+      this.btnSettings.Size = new System.Drawing.Size(32, 32);
+      this.btnSettings.TabIndex = 9;
+      this.btnSettings.Text = "⚙";
+      this.btnSettings.UseVisualStyleBackColor = false;
       // 
       // btnAddRemoveCredentials
       // 
@@ -107,16 +137,35 @@ namespace OsuServerLauncher
       this.btnAddRemoveCredentials.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
       this.btnAddRemoveCredentials.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
       this.btnAddRemoveCredentials.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnAddRemoveCredentials.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+      this.btnAddRemoveCredentials.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
       this.btnAddRemoveCredentials.ForeColor = System.Drawing.Color.White;
-      this.btnAddRemoveCredentials.Location = new System.Drawing.Point(334, 258);
+      this.btnAddRemoveCredentials.Location = new System.Drawing.Point(4, 81);
       this.btnAddRemoveCredentials.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
       this.btnAddRemoveCredentials.Name = "btnAddRemoveCredentials";
-      this.btnAddRemoveCredentials.Size = new System.Drawing.Size(183, 35);
+      this.btnAddRemoveCredentials.Size = new System.Drawing.Size(32, 32);
       this.btnAddRemoveCredentials.TabIndex = 8;
-      this.btnAddRemoveCredentials.Text = "Add Credentials";
+      this.btnAddRemoveCredentials.Text = "🔒";
       this.btnAddRemoveCredentials.UseVisualStyleBackColor = false;
       this.btnAddRemoveCredentials.Click += new System.EventHandler(this.btnAddRemoveCredentials_Click);
+      // 
+      // btnAddServer
+      // 
+      this.btnAddServer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+      this.btnAddServer.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+      this.btnAddServer.FlatAppearance.BorderSize = 2;
+      this.btnAddServer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+      this.btnAddServer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+      this.btnAddServer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnAddServer.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+      this.btnAddServer.ForeColor = System.Drawing.Color.White;
+      this.btnAddServer.Location = new System.Drawing.Point(4, 5);
+      this.btnAddServer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+      this.btnAddServer.Name = "btnAddServer";
+      this.btnAddServer.Size = new System.Drawing.Size(32, 32);
+      this.btnAddServer.TabIndex = 6;
+      this.btnAddServer.Text = "+";
+      this.btnAddServer.UseVisualStyleBackColor = false;
+      this.btnAddServer.Click += new System.EventHandler(this.btnAddServer_Click);
       // 
       // btnRemoveServer
       // 
@@ -127,82 +176,22 @@ namespace OsuServerLauncher
       this.btnRemoveServer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
       this.btnRemoveServer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
       this.btnRemoveServer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnRemoveServer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+      this.btnRemoveServer.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
       this.btnRemoveServer.ForeColor = System.Drawing.Color.White;
-      this.btnRemoveServer.Location = new System.Drawing.Point(156, 258);
+      this.btnRemoveServer.Location = new System.Drawing.Point(4, 43);
       this.btnRemoveServer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
       this.btnRemoveServer.Name = "btnRemoveServer";
-      this.btnRemoveServer.Size = new System.Drawing.Size(170, 35);
+      this.btnRemoveServer.Size = new System.Drawing.Size(32, 32);
       this.btnRemoveServer.TabIndex = 7;
-      this.btnRemoveServer.Text = "Remove Server";
+      this.btnRemoveServer.Text = "-";
       this.btnRemoveServer.UseVisualStyleBackColor = false;
       this.btnRemoveServer.Click += new System.EventHandler(this.btnRemoveServer_Click);
-      // 
-      // btnAddServer
-      // 
-      this.btnAddServer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-      this.btnAddServer.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-      this.btnAddServer.FlatAppearance.BorderSize = 2;
-      this.btnAddServer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-      this.btnAddServer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-      this.btnAddServer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnAddServer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-      this.btnAddServer.ForeColor = System.Drawing.Color.White;
-      this.btnAddServer.Location = new System.Drawing.Point(4, 258);
-      this.btnAddServer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-      this.btnAddServer.Name = "btnAddServer";
-      this.btnAddServer.Size = new System.Drawing.Size(144, 35);
-      this.btnAddServer.TabIndex = 6;
-      this.btnAddServer.Text = "Add Server";
-      this.btnAddServer.UseVisualStyleBackColor = false;
-      this.btnAddServer.Click += new System.EventHandler(this.btnAddServer_Click);
-      // 
-      // btnLauncher
-      // 
-      this.btnLauncher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-      this.btnLauncher.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-      this.btnLauncher.FlatAppearance.BorderSize = 0;
-      this.btnLauncher.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-      this.btnLauncher.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-      this.btnLauncher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnLauncher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-      this.btnLauncher.ForeColor = System.Drawing.Color.White;
-      this.btnLauncher.Location = new System.Drawing.Point(12, 12);
-      this.btnLauncher.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-      this.btnLauncher.Name = "btnLauncher";
-      this.btnLauncher.Size = new System.Drawing.Size(115, 35);
-      this.btnLauncher.TabIndex = 2;
-      this.btnLauncher.Text = "Launcher";
-      this.btnLauncher.UseVisualStyleBackColor = false;
-      this.btnLauncher.Click += new System.EventHandler(this.btnLauncher_Click);
-      // 
-      // btnAbout
-      // 
-      this.btnAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-      this.btnAbout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-      this.btnAbout.FlatAppearance.BorderSize = 2;
-      this.btnAbout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-      this.btnAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-      this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnAbout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-      this.btnAbout.ForeColor = System.Drawing.Color.White;
-      this.btnAbout.Location = new System.Drawing.Point(404, 12);
-      this.btnAbout.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-      this.btnAbout.Name = "btnAbout";
-      this.btnAbout.Size = new System.Drawing.Size(82, 35);
-      this.btnAbout.TabIndex = 3;
-      this.btnAbout.Text = "About";
-      this.btnAbout.UseVisualStyleBackColor = false;
-      this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
       // 
       // pnlAbout
       // 
       this.pnlAbout.Controls.Add(this.label2);
       this.pnlAbout.Controls.Add(this.lblVersion);
-      this.pnlAbout.Controls.Add(this.label6);
       this.pnlAbout.Controls.Add(this.label7);
-      this.pnlAbout.Controls.Add(this.pictureBox1);
-      this.pnlAbout.Controls.Add(this.label5);
       this.pnlAbout.Controls.Add(this.label4);
       this.pnlAbout.Controls.Add(this.pctrDiscord);
       this.pnlAbout.Controls.Add(this.label3);
@@ -210,7 +199,7 @@ namespace OsuServerLauncher
       this.pnlAbout.Location = new System.Drawing.Point(12, 53);
       this.pnlAbout.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
       this.pnlAbout.Name = "pnlAbout";
-      this.pnlAbout.Size = new System.Drawing.Size(493, 296);
+      this.pnlAbout.Size = new System.Drawing.Size(517, 253);
       this.pnlAbout.TabIndex = 2;
       this.pnlAbout.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDraggable);
       // 
@@ -221,7 +210,7 @@ namespace OsuServerLauncher
       this.label2.Location = new System.Drawing.Point(4, 5);
       this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(485, 46);
+      this.label2.Size = new System.Drawing.Size(509, 46);
       this.label2.TabIndex = 5;
       this.label2.Text = "osu! Server Launcher   ";
       this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -234,30 +223,17 @@ namespace OsuServerLauncher
       this.lblVersion.Location = new System.Drawing.Point(0, 47);
       this.lblVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.lblVersion.Name = "lblVersion";
-      this.lblVersion.Size = new System.Drawing.Size(492, 31);
+      this.lblVersion.Size = new System.Drawing.Size(515, 31);
       this.lblVersion.TabIndex = 8;
       this.lblVersion.Text = "Version 1.0";
       this.lblVersion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
       this.lblVersion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDraggable);
       // 
-      // label6
-      // 
-      this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-      this.label6.ForeColor = System.Drawing.Color.White;
-      this.label6.Location = new System.Drawing.Point(4, 67);
-      this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-      this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(486, 119);
-      this.label6.TabIndex = 6;
-      this.label6.Text = resources.GetString("label6.Text");
-      this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      this.label6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDraggable);
-      // 
       // label7
       // 
       this.label7.AutoSize = true;
       this.label7.ForeColor = System.Drawing.Color.DimGray;
-      this.label7.Location = new System.Drawing.Point(4, 240);
+      this.label7.Location = new System.Drawing.Point(3, 148);
       this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.label7.Name = "label7";
       this.label7.Size = new System.Drawing.Size(81, 15);
@@ -265,35 +241,11 @@ namespace OsuServerLauncher
       this.label7.Text = "feat. big tesco";
       this.label7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDraggable);
       // 
-      // pictureBox1
-      // 
-      this.pictureBox1.Location = new System.Drawing.Point(4, 10);
-      this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-      this.pictureBox1.Name = "pictureBox1";
-      this.pictureBox1.Size = new System.Drawing.Size(486, 72);
-      this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-      this.pictureBox1.TabIndex = 5;
-      this.pictureBox1.TabStop = false;
-      this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDraggable);
-      // 
-      // label5
-      // 
-      this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-      this.label5.ForeColor = System.Drawing.Color.White;
-      this.label5.Location = new System.Drawing.Point(4, 190);
-      this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-      this.label5.Name = "label5";
-      this.label5.Size = new System.Drawing.Size(486, 20);
-      this.label5.TabIndex = 4;
-      this.label5.Text = "Join our Discord Server if you found a bug or you have a suggestion!";
-      this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      this.label5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDraggable);
-      // 
       // label4
       // 
       this.label4.AutoSize = true;
       this.label4.ForeColor = System.Drawing.Color.Gray;
-      this.label4.Location = new System.Drawing.Point(4, 258);
+      this.label4.Location = new System.Drawing.Point(3, 166);
       this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.label4.Name = "label4";
       this.label4.Size = new System.Drawing.Size(177, 15);
@@ -305,7 +257,7 @@ namespace OsuServerLauncher
       // 
       this.pctrDiscord.Cursor = System.Windows.Forms.Cursors.Arrow;
       this.pctrDiscord.Image = ((System.Drawing.Image)(resources.GetObject("pctrDiscord.Image")));
-      this.pctrDiscord.Location = new System.Drawing.Point(357, 229);
+      this.pctrDiscord.Location = new System.Drawing.Point(356, 137);
       this.pctrDiscord.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
       this.pctrDiscord.Name = "pctrDiscord";
       this.pctrDiscord.Size = new System.Drawing.Size(64, 64);
@@ -318,7 +270,7 @@ namespace OsuServerLauncher
       // 
       this.label3.AutoSize = true;
       this.label3.ForeColor = System.Drawing.Color.White;
-      this.label3.Location = new System.Drawing.Point(4, 276);
+      this.label3.Location = new System.Drawing.Point(3, 184);
       this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(348, 15);
@@ -330,7 +282,7 @@ namespace OsuServerLauncher
       // 
       this.pctrGithub.Cursor = System.Windows.Forms.Cursors.Arrow;
       this.pctrGithub.Image = ((System.Drawing.Image)(resources.GetObject("pctrGithub.Image")));
-      this.pctrGithub.Location = new System.Drawing.Point(426, 229);
+      this.pctrGithub.Location = new System.Drawing.Point(425, 137);
       this.pctrGithub.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
       this.pctrGithub.Name = "pctrGithub";
       this.pctrGithub.Size = new System.Drawing.Size(64, 64);
@@ -352,14 +304,31 @@ namespace OsuServerLauncher
       this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDraggable);
       // 
+      // btnAbout
+      // 
+      this.btnAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+      this.btnAbout.Enabled = false;
+      this.btnAbout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+      this.btnAbout.FlatAppearance.BorderSize = 2;
+      this.btnAbout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+      this.btnAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+      this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnAbout.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+      this.btnAbout.ForeColor = System.Drawing.Color.White;
+      this.btnAbout.Location = new System.Drawing.Point(4, 184);
+      this.btnAbout.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+      this.btnAbout.Name = "btnAbout";
+      this.btnAbout.Size = new System.Drawing.Size(32, 32);
+      this.btnAbout.TabIndex = 10;
+      this.btnAbout.Text = "⚙";
+      this.btnAbout.UseVisualStyleBackColor = false;
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-      this.ClientSize = new System.Drawing.Size(542, 361);
-      this.Controls.Add(this.btnAbout);
-      this.Controls.Add(this.btnLauncher);
+      this.ClientSize = new System.Drawing.Size(542, 317);
       this.Controls.Add(this.btnExit);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.pnlLauncher);
@@ -376,9 +345,9 @@ namespace OsuServerLauncher
       this.Load += new System.EventHandler(this.MainForm_Load);
       this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDraggable);
       this.pnlLauncher.ResumeLayout(false);
+      this.panel1.ResumeLayout(false);
       this.pnlAbout.ResumeLayout(false);
       this.pnlAbout.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pctrDiscord)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pctrGithub)).EndInit();
       this.ResumeLayout(false);
@@ -389,17 +358,12 @@ namespace OsuServerLauncher
 
     private System.Windows.Forms.Button btnExit;
     private System.Windows.Forms.Panel pnlLauncher;
-    private System.Windows.Forms.Button btnLauncher;
-    private System.Windows.Forms.Button btnAbout;
     private System.Windows.Forms.Panel pnlAbout;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.PictureBox pctrGithub;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.PictureBox pctrDiscord;
     private System.Windows.Forms.Label label4;
-    private System.Windows.Forms.Label label5;
-    private System.Windows.Forms.PictureBox pictureBox1;
-    private System.Windows.Forms.Label label6;
     private System.Windows.Forms.Button btnAddServer;
     private System.Windows.Forms.Button btnRemoveServer;
     private System.Windows.Forms.Button btnAddRemoveCredentials;
@@ -407,5 +371,8 @@ namespace OsuServerLauncher
     private System.Windows.Forms.Label label7;
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.Label lblVersion;
+    private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.Button btnSettings;
+    private System.Windows.Forms.Button btnAbout;
   }
 }

@@ -76,38 +76,6 @@ namespace OsuServerLauncher
       }
     }
 
-    private void btnLauncher_Click(object sender, EventArgs e)
-    {
-      btnLauncher.BackColor = Color.FromArgb(10, 10, 10);
-      btnLauncher.FlatAppearance.MouseDownBackColor = Color.FromArgb(10, 10, 10);
-      btnLauncher.FlatAppearance.MouseOverBackColor = Color.FromArgb(10, 10, 10);
-      btnLauncher.FlatAppearance.BorderSize = 0;
-
-      btnAbout.BackColor = Color.FromArgb(31, 31, 31);
-      btnAbout.FlatAppearance.MouseDownBackColor = Color.FromArgb(31, 31, 31);
-      btnAbout.FlatAppearance.MouseOverBackColor = Color.FromArgb(31, 31, 31);
-      btnAbout.FlatAppearance.BorderSize = 2;
-
-      pnlLauncher.Show();
-      pnlAbout.Hide();
-    }
-
-    private void btnAbout_Click(object sender, EventArgs e)
-    {
-      btnAbout.BackColor = Color.FromArgb(10, 10, 10);
-      btnAbout.FlatAppearance.MouseDownBackColor = Color.FromArgb(10, 10, 10);
-      btnAbout.FlatAppearance.MouseOverBackColor = Color.FromArgb(10, 10, 10);
-      btnAbout.FlatAppearance.BorderSize = 0;
-
-      btnLauncher.BackColor = Color.FromArgb(31, 31, 31);
-      btnLauncher.FlatAppearance.MouseDownBackColor = Color.FromArgb(31, 31, 31);
-      btnLauncher.FlatAppearance.MouseOverBackColor = Color.FromArgb(31, 31, 31);
-      btnLauncher.FlatAppearance.BorderSize = 2;
-
-      pnlAbout.Show();
-      pnlLauncher.Hide();
-    }
-
     private async void MainForm_Load(object sender, EventArgs e)
     {
       await Task.Delay(1);
