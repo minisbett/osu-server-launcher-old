@@ -3,7 +3,7 @@
 
 <a href="https://github.com/minisbett/osu-server-launcher"><img width=128 height=128 align="right" src="https://minisbett.github.io/ultimate-osu-server-switcher/images/icon.png"></a>
 
-## osu! Server Launcher
+## osu! Server Launcher DEPRECATED AGAIN LOL CHECK OUT NEW REPO WAY BETTER
 This is the follow-up to the Ultimate osu! Server Switcher but updated to the new devserver connection method.
 
 ## How to use
